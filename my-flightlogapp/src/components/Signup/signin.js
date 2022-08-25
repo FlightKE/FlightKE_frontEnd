@@ -1,14 +1,13 @@
-import navbar from "./navbar";
 import React, {Component} from 'react';
-import "../App.css"
-export default class Createuser extends Component{
+import "./signin.css"
+
+export default class Signin extends Component{
     render(){
 
         return (
-            <div className="container">
+            <div className="containersignin">
             <div className="d-flex justify-content-center h-100">
                 <div className="card">
-                    <div class="card-header">
                         <h3>Sign In</h3>
                         <div className="d-flex justify-content-end social_icon">
                             <span><i className="fab fa-facebook-square"></i></span>
@@ -49,7 +48,7 @@ export default class Createuser extends Component{
                     </div>
                 </div>
             </div>
-        </div>
+        
         )
     }
 }

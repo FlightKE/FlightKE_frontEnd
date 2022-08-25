@@ -16,10 +16,10 @@ export default class Navbar extends Component{
           <Link to="/" className="nav-link">Flights</Link>
           </li>
           <li className="navbar-item">
-          <Link to="/create" className="nav-link">User</Link>
+          <Link to="/create" className="nav-link">Sign In</Link>
           </li>
           <li className="navbar-item">
-          <Link to="/user" className="nav-link">Create User</Link >
+          <Link to="/user" className="nav-link">My Account</Link >
           </li>
         </ul>
         </div>
