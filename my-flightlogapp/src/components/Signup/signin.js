@@ -3,6 +3,29 @@ import "./signin.css"
 
 export default class Signin extends Component{
     render(){
+        let handleSubmit = async (e) => {
+            e.preventDefault();
+            try {
+              let res = await fetch("https://httpbin.org/post", {
+                method: "POST",
+                body: JSON.stringify({
+                  name: name,
+                  email: email,
+                  mobileNumber: mobileNumber,
+                }),
+              });
+              let resJson = await res.json();
+              if (res.status === 200) {
+                setName("");
+                setEmail("");
+                setMessage("User created successfully");
+              } else {
+                setMessage("Some error occured");
+              }
+            } catch (err) {
+              console.log(err);
+            }
+          };
 
         return (
             <div className="containersignin">
@@ -28,13 +51,19 @@ export default class Signin extends Component{
                                 <div className="input-group-prepend">
                                     <span className="input-group-text"><i className="fas fa-key"></i></span>
                                 </div>
-                                <input type="password" className="form-control" placeholder="password"/>
+                                <input 
+                                type="password" 
+                                className="form-control" 
+                                placeholder="password"/>
                             </div>
                             <div className="row align-items-center remember">
                                 <input type="checkbox"/>Remember Me
                             </div>
                             <div className="form-group">
-                                <input type="submit" value="Login" className="btn float-right login_btn"/>
+                                <input 
+                                type="submit" 
+                                value="Login" 
+                                className="btn float-right login_btn"/>
                             </div>
                         </form>
                     </div>
