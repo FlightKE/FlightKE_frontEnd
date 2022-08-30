@@ -14,9 +14,10 @@ function App() {
   return (
     <Router>
       <div className = "container">
+        <Navbar/>
       <br/>
        <Routes>
-      <Route path = "/Home" element={<Home/>}/>
+      <Route path = "/" element={<Home/>}/>
       <Route path = "/user/:id" element= {<UserProfile/>}/> 
       <Route path = "/register" element= {<Register/>}/> 
       <Route path = "/addflight" element = {<AddFlight/>}/>
